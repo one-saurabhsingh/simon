@@ -14,6 +14,14 @@ $(document).keypress(function(){
 });
 
 
+$(".btn").click(function(){
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+
+checkAnswer(userClickedPattern.length-1);
+});
 
 
 function checkAnswer(currentLevel){
